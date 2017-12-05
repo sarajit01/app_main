@@ -29,6 +29,13 @@ app.controller('login_ctrl' , function ($scope , $http , $q , $timeout , $interv
                 else {
                     $scope.error = undefined ;
                     $scope.success = res.data.message ;
+
+                    $timeout(redirectToDashboard , 1500) ;
+                    
+                    function redirectToDashboard() {
+                          window.location.href = 'account.html' ;
+                    }
+
                 }
             }  ,
             function (reason) {

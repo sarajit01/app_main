@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="webPlayer">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="utf-8">
@@ -10,21 +10,22 @@
 
     <title>Web Player | Subliminals</title>
     <!-- Bootstrap Core CSS -->
-    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="https://animusa.net/assets/ampleadmin-minimal/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="assets/sidebar-nav.min.css" rel="stylesheet">
+    <link href="https://animusa.net/assets/ampleadmin-minimal/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- toast CSS -->
-  
- 
+
+
     <!-- animation CSS -->
-    <link href="assets/animate.css" rel="stylesheet">
+    <link href="https://animusa.net/assets/ampleadmin-minimal/css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="https://animusa.net/assets/ampleadmin-minimal/css/style.css" rel="stylesheet">
     <!-- color CSS -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
@@ -33,6 +34,36 @@
         }
     </style>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.min.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/audioController.js"></script>
+    <style type="text/css">
+        .jq-toast-wrap {
+            visibility: hidden;
+        }
+    </style>
+
+    <script src="https://animusa.net/assets/ampleadmin-minimal/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://animusa.net/assets/ampleadmin-minimal/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Menu Plugin JavaScript -->
+    <script src="https://animusa.net/assets/ampleadmin-minimal/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <!--slimscroll JavaScript -->
+    <script src="https://animusa.net/assets/ampleadmin-minimal/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="https://animusa.net/assets/ampleadmin-minimal/js/waves.js"></script>
+    <!--Counter js -->
+
+    <script src="https://animusa.net/assets/ampleadmin-minimal/js/custom.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body class="fix-header" ng-controller="audioController" ng-cloak >
@@ -52,13 +83,8 @@
         <div class="navbar-header">
             <div class="top-left-part" style="background-color: #ccc;">
                 <!-- Logo -->
-                <a class="logo" href="{{route('user.account.dashboard')}}">
-                    <!-- Logo icon image, you can use font-icon also --><b>
-                        <!--This is dark logo icon--><img src="{{asset('assets/home/rsz_1subliminals_8.png')}}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="{{asset('assets/home/rsz_1subliminals_8.png')}}" alt="home" class="light-logo" />
-                    </b>
-                    <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="{{asset('assets/home/logo-right.png')}}" alt="home" class="dark-logo" /><!--This is light logo text--><img src="{{asset('assets/home/logo-right.png')}}" alt="home" class="light-logo" />
-                     </span> </a>
+                <a class="logo" href="account.html">
+                </a>
             </div>
             <!-- /Logo -->
             <!-- Search input and Toggle icon -->
@@ -90,20 +116,20 @@
             <div class="user-profile">
                 <div class="dropdown user-pro-body">
                     <div><img src="https://image.flaticon.com/icons/svg/149/149071.svg" alt="user-img" class="img-circle"></div>
-                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Username <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
                     <ul class="dropdown-menu animated flipInY">
-                        <li><a target="_blank" href="{{route('user.account.dashboard')}}"><i class="ti-user"></i> My Profile</a></li>
+                        <li><a  href="account.html"><i class="ti-user"></i> My Profile</a></li>
 
                         <li role="separator" class="divider"></li>
-                        <li><a target="_blank" href="{{route('user.account.profile.edit')}}"><i class="ti-settings"></i> Account Setting</a></li>
+                        <li><a  href="edit-profile.html"><i class="ti-settings"></i> Account Setting</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{{route('user.logout')}}"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
             <ul class="nav" id="side-menu">
 
-                <li> <a target="_blank" href="{{route('user.account.dashboard')}}" class="waves-effect"><i class="fa fa-user" data-icon="v"></i> <span class="hide-menu">&nbsp; My Account  </span></a>
+                <li> <a href="account.html" class="waves-effect"><i class="fa fa-user" data-icon="v"></i> <span class="hide-menu">&nbsp; My Account  </span></a>
 
                 </li>
                 <li> <a href="" ng-click="backToAlbum()" class="waves-effect"><i class="fa fa-home" data-icon="v"></i> <span class="hide-menu">&nbsp; Home </span></a>
@@ -116,7 +142,7 @@
 
             </ul>
             <center>
-                <button class="btn btn-default btn-rounded btn-lg download-app">Download App &nbsp;<i class="fa fa-arrow-down"></i> </button>
+               
             </center>
         </div>
     </div>
@@ -129,7 +155,7 @@
         <div class="container-fluid" id="gallery-container">
             
             <!-- /.row -->
-            <div class="row" ng-init="getAlbums('{{route('disk.albums.get')}}')">
+            <div class="row" ng-init="getAlbums('https://animusa.net/albums')">
                 <div class="white-box" id="album-showcase">
                     <ul class="nav nav-tabs tabs customtab" id="gallery-options">
 
@@ -156,11 +182,11 @@
                                <div ng-if="progress === false" ng-repeat="x in albums track by $index">
                                <div class="col-md-2 col-lg-2 col-sm-3 col-xs-6 album">
                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 album-avatar">
-                                       <img src="{{url('storage/app')}}/@{{x.album_image}}" alt="gallery" class="img img-responsive"  ng-click="appearAudioList(x.id,'{{route('disk.album.audios.get')}}','{{route('disk.album.get.details')}}')" ng-if="x.album_image !== null "/>
-                                       <img src="{{asset('assets/music-2297759_960_720.png')}}" alt="gallery" class="img img-responsive"  ng-click="appearAudioList(x.id,'{{route('disk.album.audios.get')}}','{{route('disk.album.get.details')}}')" ng-if="x.album_image === null "/>
+                                       <img src="https://animusa.net/storage/app/{{x.album_image}}" alt="gallery" class="img img-responsive"  ng-click="appearAudioList(x.id,'https://animusa.net/audios','https://animusa.net/album-details')" ng-if="x.album_image !== null "/>
+                                       <img src="https://animusa.net/assets/music-2297759_960_720.png" alt="gallery" class="img img-responsive"  ng-click="appearAudioList(x.id,'https://animusa.net/audios','https://animusa.net/album-details')" ng-if="x.album_image === null "/>
                                    </div>
                                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 album-title text-center">
-                                       <p>@{{x.album_title}}</p>
+                                       <p>{{x.album_title}}</p>
                                    </div>
                                </div>
                                    
@@ -180,19 +206,19 @@
                 <div class="white-box" id="audio-showcase">
                     
                     <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 album-avatar">
-                        <img src='{{url('storage/app')}}/@{{albumDetails.album_image}}' alt="gallery" class="img img-responsive" ng-if="albumDetails.album_image !== null ">
-                        <img src='{{asset('assets/music-2297759_960_720.png')}}' alt="gallery" class="img img-responsive" ng-if="albumDetails.album_image === null ">
+                        <img src='https://animusa.net/storage/app/{{albumDetails.album_image}}' alt="gallery" class="img img-responsive" ng-if="albumDetails.album_image !== null ">
+                        <img src='https://animusa.net/assets/music-2297759_960_720.png' alt="gallery" class="img img-responsive" ng-if="albumDetails.album_image === null ">
                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 
-                            <h2 class="text-center">@{{albumDetails.album_title}}</h2>
+                            <h2 class="text-center">{{albumDetails.album_title}}</h2>
                         </div>
                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
 
-                            <h4 class="text-center">@{{albumDetails.album_category}}</h4>
+                            <h4 class="text-center">{{albumDetails.album_category}}</h4>
                         </div>
                         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                              <center>
-                                 <button class="btn btn-success btn-lg btn-rounded shadow-depth-2" id="play-album" ng-click="playAlbum('@{{albumDetails.id}}')"><span ng-if="play === false && currentAlbum.id === albumDetails.id  "><i class="fa fa-play" ></i>&nbsp; Play</span><span ng-if="play === true && currentAlbum.id === albumDetails.id"><i class="fa fa-pause" ></i>&nbsp; Pause</span><span ng-if="currentAlbum.id !== albumDetails.id  "><i class="fa fa-play" ></i>&nbsp; Play</span></button>
+                                 <button class="btn btn-success btn-lg btn-rounded shadow-depth-2" id="play-album" ng-click="playAlbum('{{albumDetails.id}}')"><span ng-if="play === false && currentAlbum.id === albumDetails.id  "><i class="fa fa-play" ></i>&nbsp; Play</span><span ng-if="play === true && currentAlbum.id === albumDetails.id"><i class="fa fa-pause" ></i>&nbsp; Pause</span><span ng-if="currentAlbum.id !== albumDetails.id  "><i class="fa fa-play" ></i>&nbsp; Play</span></button>
                              </center>
                         </div>
                     </div>
@@ -213,19 +239,19 @@
                                    </h4>
                                    <h4 ng-if="selectedHover !== $index &&  currentAudioId !== x.id">
 
-                                   @{{$index +1}}.</h4>
+                                   {{$index +1}}.</h4>
                                </div>
                                <div class="col-md-10 col-lg-9 col-sm-9 col-xs-9 audio-title" >
-                                   <h4>@{{x.audio_title}}  </h4>
-                                   <p class="hidden-xs">@{{x.writer_name}} , @{{x.audio_title}}</p>
+                                   <h4>{{x.audio_title}}  </h4>
+                                   <p class="hidden-xs">{{x.writer_name}} , {{x.audio_title}}</p>
                                </div>
                                <div class="col-md-2 col-lg-2 col-sm-2">
                                    <br/>
-                                   <h4 class="hidden-xs">@{{x.duration}}</h4>
-                                   <span class="hidden-md hidden-lg hidden-sm text-right">@{{x.duration}}</span>
+                                   <h4 class="hidden-xs">{{x.duration}}</h4>
+                                   <span class="hidden-md hidden-lg hidden-sm text-right">{{x.duration}}</span>
                                </div>
                                <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                                   <p style="color: #0bb8c9 !important;">Description : @{{x.audio_desc}}</p>
+                                   <p style="color: #0bb8c9 !important;">Description : {{x.audio_desc}}</p>
                                </div>
                            </div>
 
@@ -254,16 +280,16 @@
                                 </h4>
                                 <h4 ng-if="selectedHover !== $index &&  currentAudioId !== x.id" style="color: #fff !important;">
 
-                                    @{{$index +1}}.</h4>
+                                    {{$index +1}}.</h4>
                             </div>
                             <div class="col-md-10 col-lg-9 col-sm-9 col-xs-9 audio-title" style="color: #fff !important;" >
-                                <h4 style="color: #fff !important;">@{{x.audio_title}}  </h4>
-                                <p class="hidden-xs" style="color: #fff !important;">@{{x.writer_name}} , @{{x.audio_title}}</p>
+                                <h4 style="color: #fff !important;">{{x.audio_title}}  </h4>
+                                <p class="hidden-xs" style="color: #fff !important;">{{x.writer_name}} , {{x.audio_title}}</p>
                             </div>
                             <div class="col-md-2 col-lg-2 col-sm-2" style="color: #fff !important ;">
                                 <br/>
-                                <h4 class="hidden-xs" style="color: #fff !important;">@{{x.duration}}</h4>
-                                <span class="hidden-md hidden-lg hidden-sm text-right" style="color: #fff !important;">@{{x.duration}}</span>
+                                <h4 class="hidden-xs" style="color: #fff !important;">{{x.duration}}</h4>
+                                <span class="hidden-md hidden-lg hidden-sm text-right" style="color: #fff !important;">{{x.duration}}</span>
                             </div>
 
                         </div>
@@ -307,17 +333,17 @@
                       </div>
                       <div class="col-md-1 col-lg-1 hidden-xs" style="padding-top: 10px;">
                           <center>
-                              <img src='{{url('storage/app')}}/@{{currentAudioImgSrc}}' class="img-responsive">
+                              <img src='https://animusa.net/storage/app/{{currentAudioImgSrc}}' class="img-responsive">
                           </center>
                           
                       </div>
                       <div class="body__info col-md-3 col-lg-3">
 
-                          <div class="info__album hidden-xs">@{{currentAudioAlbum}}</div>
+                          <div class="info__album hidden-xs">{{currentAudioAlbum}}</div>
 
-                          <div class="info__song">@{{currentAudioTitle}}</div>
+                          <div class="info__song">{{currentAudioTitle}}</div>
 
-                          <div class="info__artist hidden-xs">@{{currentAudioWriter}}</div>
+                          <div class="info__artist hidden-xs">{{currentAudioWriter}}</div>
                       </div>
 
                       <div class="body__buttons col-md-4 col-lg-4">
@@ -341,7 +367,7 @@
                       </div>
                       <div class="player__footer col-md-4 col-lg-4 col-sm-4 col-xs-12">
                           <ul class="list list--footer">
-                              <li><a href="#" class="list__link"><i class="fa fa-heart-o" ng-click="addToPlayList('{{route('user.add.audio')}}',currentAudioId,'alert')"></i></a></li>
+                              <li><a href="#" class="list__link"><i class="fa fa-heart-o" ng-click="addToPlayList('https://animusa.net/audio/gallery/add',currentAudioId,'alert')"></i></a></li>
 
                               <li ng-if="minVol !== true"><a href=""   ng-click="volumeDown()" class="list__link"><i class="fa fa-volume-down"></i></a></li>
 
@@ -772,11 +798,7 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="assets/jquery.min.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="assets/bootstrap.min.js"></script>
-<!-- Menu Plugin JavaScript -->
-<script src="assets/sidebar-nav.min.js"></script>
+
 <!--slimscroll JavaScript --
 <script src="ampleadmin-minimal/js/jquery.slimscroll.js"></script>
 <!--Wave Effects --
